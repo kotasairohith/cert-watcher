@@ -1,0 +1,21 @@
+cert_id,common_name,sans,environment,criticality,source,issuer,owner_team,owner_email,auto_renew,not_before,not_after,notes
+CRT-0001,api.acme.com,"api.acme.com,api-v2.acme.com",prod,high,aws-acm,Amazon RSA 2048 M02,platform,platform-team@acme.com,true,2026-02-10T00:00:00Z,2027-03-11T23:59:59Z,ACM managed; renews automatically
+CRT-0002,www.acme.com,"www.acme.com,acme.com",prod,high,aws-acm,Amazon RSA 2048 M02,web,web-team@acme.com,true,2025-11-20T00:00:00Z,2026-11-19T23:59:59Z,Renewal pending DNS validation
+CRT-0003,legacy-portal.acme.com,legacy-portal.acme.com,prod,medium,manual,DigiCert TLS RSA SHA256 2020 CA1,,,false,2025-11-05T00:00:00Z,2026-11-05T23:59:59Z,EXPIRED; owner field blank; appliance in DC2
+CRT-0004,vpn.acme.com,vpn.acme.com,prod,high,manual,DigiCert TLS RSA SHA256 2020 CA1,netops,netops@acme.com,false,2025-11-14T00:00:00Z,2026-11-14T23:59:59Z,Installed on Palo Alto; manual renewal
+CRT-0005,*.internal.acme.com,*.internal.acme.com,prod,high,azure-keyvault,Acme Internal CA G2,platform,platform-team@acme.com,false,2025-12-01T00:00:00Z,2026-12-01T23:59:59Z,Wildcard; shared by 40+ services
+CRT-0006,payments.acme.com,payments.acme.com,prod,high,azure-keyvault,DigiCert Global G2 TLS RSA SHA256 2020 CA1,payments,j.okafor@acme.com,false,2025-11-25T00:00:00Z,2026-11-25T23:59:59Z,Owner left company 2026-09; needs reassignment
+CRT-0007,staging-api.acme.com,staging-api.acme.com,staging,low,aws-acm,Amazon RSA 2048 M02,platform,platform-team@acme.com,true,2026-05-01T00:00:00Z,2027-05-01T23:59:59Z,
+CRT-0008,grafana.ops.acme.com,grafana.ops.acme.com,prod,medium,kubernetes,Let's Encrypt R11,sre,sre@acme.com,true,2026-09-15T00:00:00Z,2026-12-14T23:59:59Z,cert-manager; 90-day LE cert
+CRT-0009,jenkins.ci.acme.com,jenkins.ci.acme.com,internal,medium,kubernetes,Let's Encrypt R11,devex,devex@acme.com,false,2026-08-20T00:00:00Z,2026-11-18T23:59:59Z,cert-manager disabled after cluster migration
+CRT-0010,mail.acme.com,"mail.acme.com,smtp.acme.com,imap.acme.com",prod,high,manual,Sectigo RSA Domain Validation Secure Server CA,it-infra,it-infra@acme.com,false,2025-10-30T00:00:00Z,2026-10-30T23:59:59Z,EXPIRED 13 days; Exchange still serving it
+CRT-0011,sso.acme.com,sso.acme.com,prod,high,azure-keyvault,DigiCert Global G2 TLS RSA SHA256 2020 CA1,identity,identity@acme.com,false,2026-01-20T00:00:00Z,2027-01-20T23:59:59Z,
+CRT-0012,db-proxy.internal.acme.com,db-proxy.internal.acme.com,prod,high,manual,Acme Internal CA G2,dba,dba@acme.com,false,2024-11-13T00:00:00Z,2026-11-13T23:59:59Z,Self-signed internal CA; 2-year validity
+CRT-0013,dev-sandbox.acme.com,dev-sandbox.acme.com,dev,low,aws-acm,Amazon RSA 2048 M02,,,true,2026-03-01T00:00:00Z,2027-03-01T23:59:59Z,No owner recorded
+CRT-0014,partner-sftp.acme.com,partner-sftp.acme.com,prod,medium,manual,GlobalSign RSA OV SSL CA 2018,integrations,integrations@acme.com,false,2025-12-07T00:00:00Z,2026-12-07T23:59:59Z,Partner pins this cert; coordinate before rotating
+CRT-0015,cdn.acme.com,cdn.acme.com,prod,high,cloudflare,Cloudflare Inc ECC CA-3,web,web-team@acme.com,true,2026-10-01T00:00:00Z,2027-01-01T23:59:59Z,Edge cert; managed by CDN
+CRT-0016,old-api.acme.com,old-api.acme.com,prod,low,manual,DigiCert TLS RSA SHA256 2020 CA1,platform,platform-team@acme.com,false,2024-06-01T00:00:00Z,2026-06-01T23:59:59Z,EXPIRED 5 months; service decommissioned? verify
+CRT-0017,google.com,google.com,external,low,endpoint-scan,,,,true,,,Real public host; use for live scanner test
+CRT-0018,github.com,github.com,external,low,endpoint-scan,,,,true,,,Real public host; use for live scanner test
+CRT-0019,expired.badssl.com,expired.badssl.com,external,low,endpoint-scan,,,,false,,,Real public host that serves an EXPIRED cert; scanner test
+CRT-0020,k8s-ingress.prod.acme.com,"k8s-ingress.prod.acme.com,*.apps.acme.com",prod,high,kubernetes,Let's Encrypt R11,sre,sre@acme.com,true,2026-10-20T00:00:00Z,2027-01-18T23:59:59Z,
